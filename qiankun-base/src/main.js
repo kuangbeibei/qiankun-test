@@ -31,7 +31,12 @@ const apps = [
 	}
 ]
 
-registerMicroApps(apps);	// 注册应用
+registerMicroApps(apps, {
+	beforeLoad: app => console.log('before load', app.name),
+	beforeMount: [
+		app => console.log('before mount', app.name),
+	],
+});	// 注册应用
 // start();	// 启动应用
 start({
 	prefetch: false	// 取消预加载，比如点击某个应用才开始加载

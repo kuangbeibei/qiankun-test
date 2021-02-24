@@ -27,13 +27,15 @@ if (!window.__POWERED_BY_QIANKUN__) {
 
 // 子组件暴露的生命周期hook
 export async function bootstrap(props) {
-
+  console.log('qiankun-vue boostrap')
 }
 
 export async function mount(props) {
+  console.log('qiankun-vue mount');
   render(props)
 }
 
 export async function unmount(props) {
+  console.log('qiankun-vue unmount');
   instance.$destroy()
 }
